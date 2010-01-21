@@ -1,0 +1,27 @@
+sfDoctrineJQueryUISortablePlugin
+==========================
+
+INTRO
+
+Installation
+------------
+
+To install the plugin for a symfony project, the usual process is to use the
+symfony command line:
+
+    php symfony plugin:install sfDoctrineJQueryUISortablePlugin
+
+If for some reason this fails then you can manually download the tgz file from
+
+    http://plugins.symfony-project.org/get/sfDoctrineJQueryUISortablePlugin/sfDoctrineJQueryUISortablePlugin-1.2.0.tgz
+
+
+Usage
+-----
+
+Documentation coming soon(ish)...
+
+
+Configuration
+-------------
+

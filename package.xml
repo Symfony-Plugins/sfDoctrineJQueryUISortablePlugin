@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package packagerversion="1.4.6" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>sfDoctrineJQueryUISortablePlugin</name>
+ <channel>plugins.symfony-project.org</channel>
+ <summary>JQueryUI Sortable lists integrated with doctrine</summary>
+ <description>Description coming soon(ish)...
+ </description>
+ <lead>
+  <name>Rich Birch</name>
+  <user>uncleringo</user>
+  <email>rich@trafficdigital.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2010-01-21</date>
+ <time>13:02:00</time>
+ <version>
+  <release>1.0.0</release>
+  <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+ <license uri="http://www.symfony-project.org/license">MIT license</license>
+ <notes>-</notes>
+ <contents>
+  <dir name="/">
+   <file role="data" name="README" />
+   <file role="data" name="LICENSE" />
+   <dir name="config">
+    <file role="data" name="routing.yml" />
+   </dir>
+   <dir name="lib">
+    <dir name="widget">
+     <!-- widgets -->
+     <file role="data" name="sfWidgetFormDoctrineJQueryUISortable.class.php" />
+    </dir>
+   </dir>
+   <dir name="modules">
+    <dir name="sfDoctrineJQueryUISortable">
+     <dir name="actions">
+      <file role="data" name="actions.class.php" />
+     </dir>
+    </dir>
+   </dir>
+  </dir>
+ </contents>
+ <dependencies>
+  <required>
+   <php>
+    <min>5.2.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.2.0</min>
+    <max>2.0.0</max>
+    <exclude>2.0.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+ <phprelease />
+ <changelog>
+  <release>
+   <version>
+    <release>1.0.0</release>
+    <api>1.0.0</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <license uri="http://www.symfony-project.org/license">MIT license</license>
+   <date>2010-01-21</date>
+   <notes>
+    First stable version of the package
+   </notes>
+  </release>
+ </changelog>
+</package>
