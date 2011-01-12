@@ -7,8 +7,12 @@ class sfDoctrineJQueryUISortableActions extends sfActions
     $model = $request->getParameter('model');
     $order = 'sfDoctrineJQueryUISortable' . $model;
     $parentModel = $request->getParameter('parent_model');
+    if($request->getParameter('parent_super_class'))
+    {
+      $parentModel = $request->getParameter('parent_super_class');
+    }
     $parentId = $request->getParameter('parent_id');
-
+    
     if (empty($model) || empty($order) || empty($parentModel) || empty($parentId)
         || !is_array($request->getParameter($order)))
     {
@@ -17,6 +21,7 @@ class sfDoctrineJQueryUISortableActions extends sfActions
 
     foreach ($request->getParameter($order) as $rank => $objectId)
     {
+      
       $query = Doctrine_Query::create()
         ->from($model . ' m')
         ->innerJoin('m.' . $parentModel . ' p')

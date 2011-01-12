@@ -20,12 +20,12 @@ class sfWidgetFormDoctrineJQueryUISortable extends sfWidgetForm
     parent::configure($options, $attributes);
     
     $this->addRequiredOption('model');
-    $this->addRequiredOption('parent_object');
-    
+    $this->addRequiredOption('parent_object');  
     $this->addOption('method', '__toString');
     $this->addOption('key_method', 'getPrimaryKey');
     $this->addOption('parent_key_method', 'getPrimaryKey');
     $this->addOption('order_by', null);
+    $this->addOption('parent_super_class', null);
     $this->addOption('query', null);
     $this->addOption('table_method', null);
     $this->addOption('grid', false);
@@ -53,15 +53,17 @@ class sfWidgetFormDoctrineJQueryUISortable extends sfWidgetForm
         $query->addOrderBy($order[0] . ' ' . $order[1]);
       }
       $objects = $query->execute();
+      
     }
     else
     {
       $tableMethod = $this->getOption('table_method');
-
+      
       $results = is_array($tableMethod)
         ? call_user_func_array(array(Doctrine::getTable($this->getOption('model')), $tableMethod[0]), $tableMethod[1])
         : Doctrine::getTable($this->getOption('model'))->$tableMethod();
 
+      
       if ($results instanceof Doctrine_Query)
       {
         $objects = $results->execute();
@@ -134,6 +136,7 @@ class sfWidgetFormDoctrineJQueryUISortable extends sfWidgetForm
 
   private function getJavascript()
   {
+   
     $parentKeyMethod = $this->getOption('parent_key_method');
     $routing = sfContext::getInstance()->getRouting();
 
@@ -144,7 +147,8 @@ class sfWidgetFormDoctrineJQueryUISortable extends sfWidgetForm
         'model' => $this->getOption('model'),
         'rank_field' => $this->getOption('rank_field'),
         'parent_model' => get_class($this->getOption('parent_object')),
-        'parent_id' => $this->getOption('parent_object')->$parentKeyMethod()
+        'parent_id' => $this->getOption('parent_object')->$parentKeyMethod(),
+        'parent_super_class' => $this->getOption('parent_super_class'),
         )
     );
     
