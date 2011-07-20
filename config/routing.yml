@@ -1,3 +1,7 @@
 sfDoctrineJQueryUISortable:
   url:   /sfDoctrineJQueryUISortable/saveOrder/:model/:rank_field/:parent_model/:parent_id
   param: { module: sfDoctrineJQueryUISortable, action: saveOrder }
+
+sfDoctrineJQueryUISortableSimple:
+  url:   /sfDoctrineJQueryUISortable/saveOrderSimple/:model
+  param: { module: sfDoctrineJQueryUISortable, action: saveOrderSimple }

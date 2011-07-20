@@ -38,4 +38,21 @@ class sfDoctrineJQueryUISortableActions extends sfActions
 
     return sfView::HEADER_ONLY;
   }
+  
+  public function executeSaveOrderSimple(sfWebRequest $request)
+  { 
+    $model = $request->getParameter('model');
+
+    foreach ($request->getParameter('sortable') as $rank => $object_id)
+    {
+      $q = Doctrine::getTable($model)->createQuery('m')
+              ->update()
+              ->set('m.rank', $rank)
+              ->where('m.id = ?', $object_id)
+              ;
+      $q->execute();
+    }
+
+    return sfView::HEADER_ONLY;
+  }
 }
